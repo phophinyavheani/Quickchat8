@@ -82,7 +82,7 @@ public class JUnitTest {
 
     @Test
     void testCheckPasswordComplexity_NoSpecialChar() {
-        assertFalse(loginSystem.checkPasswordComplexity("Mufha45"), 
+        assertFalse(loginSystem.checkPasswordComplexity("Mufhk45"), 
             "Password without a special character should be invalid");
     }
 
