@@ -104,7 +104,7 @@ public class JUnitTest {
 
     @Test
     void testCheckCellphoneNumber_ValidNumber() {
-        assertTrue(loginSystem.checkCellphoneNumber("+27766223171"), 
+        assertTrue(loginSystem.checkCellphoneNumber("+27666223171"), 
             "Valid cell phone number starting with +27 and 9 digits should pass");
     }
 
