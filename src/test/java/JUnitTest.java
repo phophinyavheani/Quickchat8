@@ -32,7 +32,7 @@ public class JUnitTest {
         assertTrue(loginSystem.checkUserName("po_g"), 
             "Username with underscore and length <= 5 should be valid");
     }
-
+// check wheather username contains underscore if not return fasle
     @Test
     void testCheckUserName_NoUnderscore() {
         assertFalse(loginSystem.checkUserName("pogp"), 
