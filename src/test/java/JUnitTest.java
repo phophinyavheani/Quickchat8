@@ -145,7 +145,7 @@ public class JUnitTest {
 
     @Test
     void testRegisterUser_InvalidUsername() {
-        String result = loginSystem.registerUser("pogpmod", "Mufha@67", "+27766223171");
+        String result = loginSystem.registerUser("pokpmod", "Mufha@67", "+27766223171");
         assertTrue(result.contains("Username is not correctly formatted"), 
             "Invalid username should return appropriate error message");
     }
