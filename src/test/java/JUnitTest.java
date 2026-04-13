@@ -29,23 +29,23 @@ public class JUnitTest {
     @Test
     void testCheckUserName_ValidUsername() {
         // Contains underscore and length <= 5
-        assertTrue(loginSystem.checkUserName("po_g"), 
+        assertTrue(loginSystem.checkUserName("po_u"), 
             "Username with underscore and length <= 5 should be valid");
     }
-// checks wheather username contains underscore if not return fasle
+// checks wheather username contains underscore if not return fasles
     @Test
     void testCheckUserName_NoUnderscore() {
         assertFalse(loginSystem.checkUserName("pogp"), 
             "Username without underscore should be invalid");
     }
-// changes username
+// check username
     @Test
     void testCheckUserName_TooLong() {
         // teste weather username Has underscore but length > 5
         assertFalse(loginSystem.checkUserName("pogp_mod"), 
             "Username longer than 5 characters should be invalid");
     }
-// chack weather username is more than 8
+// chack weather username is more than 8 character
     @Test
     void testCheckUserName_ExactlyFiveChars() {
         assertTrue(loginSystem.checkUserName("p_mod"), 
@@ -70,7 +70,7 @@ public class JUnitTest {
 
     @Test
     void testCheckPasswordComplexity_NoCapital() {
-        assertFalse(loginSystem.checkPasswordComplexity("mufha@26"), 
+        assertFalse(loginSystem.checkPasswordComplexity("mufhi@26"), 
             "Password without a capital letter should be invalid");
     }
 //
