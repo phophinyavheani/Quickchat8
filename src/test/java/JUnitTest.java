@@ -128,7 +128,7 @@ public class JUnitTest {
 
     @Test
     void testCheckCellphoneNumber_WithLetters() {
-        assertFalse(loginSystem.checkCellphoneNumber("+27dfz067891"), 
+        assertFalse(loginSystem.checkCellphoneNumber("+27vfz067891"), 
             "Number containing letters should be invalid");
     }
 
