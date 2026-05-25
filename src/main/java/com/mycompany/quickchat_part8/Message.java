@@ -5,6 +5,9 @@
 package com.mycompany.quickchat_part8;
 
 import java.util.Random;
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 /**
  *
@@ -62,13 +65,13 @@ import java.util.Random;
      String sentMessage(int choice) {
         if (choice == 1) {
             messageCount++;
-            return "Message successfully sent.";
+            return "Message successfully sent";
         } else if (choice == 2) {
-            return "Press 0 to delete the message.";
+            return "Press 0 to delete the message";
         } else if (choice == 3) {
-            return "Message successfully stored.";
+            return "Message successfully stored";
         } else {
-            return "Invalid option.";
+            return "Invalid option";
         }
     }
 
@@ -89,5 +92,30 @@ import java.util.Random;
     public void setMessage(String message) {
         this.message = message;
     }
-}
+    
+    
+    public void storeMessageJSON(String hash, String status) {
+
+        String json = "{\n" + "\"messageID\": \"" + messageID + "\",\n" + "\"recipient\": \"" + recipient + "\",\n" +"\"message\": \"" + message + "\",\n" + "\"hash\": \"" + hash + "\",\n" +"\"status\": \"" + status + "\"\n" +"},\n";
+
+        try {
+
+            FileWriter writer = new FileWriter("messages.json", true);
+
+            writer.write(json);
+
+            writer.close();
+
+            System.out.println("Message stored in JSON file.");
+
+        } catch (IOException e) {
+
+            System.out.println("Error saving message.");
+        }
+    }
+    
+    
+    
+    
+ }
 
