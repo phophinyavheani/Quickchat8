@@ -2,22 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-import java.util.Random;
+package com.mycompany.quickchat_part8;
+
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Random;
 
 /**
  *
  * @author phoph
  */
-public class massage {
-   
-
-
-
-
-  
-    String messageID;
+class Message {
+    
+String messageID;
      String recipient;
      String message;
      int messageCount = 0;
@@ -119,5 +116,3 @@ public class massage {
     
     
  }
-    
-
