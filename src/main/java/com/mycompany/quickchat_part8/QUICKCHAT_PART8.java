@@ -107,8 +107,8 @@ public class QUICKCHAT_PART8 {
                             sentCount++;
                             System.out.println(msg.printMessages(hash));
                         }
-
-                    } else if (choice == 2) { // ← MOVED to correct position
+                        // MOVED to correct position  
+                    } else if (choice == 2) { 
 
                         System.out.println("\n===== MESSAGE REPORT MENU =====");
                         System.out.println("1) Display Senders and Recipients");
