@@ -1,2 +1,2 @@
 # Quickchat8
-chat
+add massage for my quickchat
