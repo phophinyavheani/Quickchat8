@@ -14,7 +14,7 @@ import java.util.Random;
  */
 class Message {
     
-//  Message Fields 
+//  Message variable 
     String messageID;
     String recipient;
     String message;

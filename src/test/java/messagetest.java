@@ -22,7 +22,7 @@ public class messagetest {
         message = new Message();
         message.messageID  = "1234567890";
         message.recipient  = "+27831234567";
-        message.message    = "Hello World";
+        message.message    = "HI ZOLA";
     }
  
     //  generateMessageID 
@@ -105,7 +105,7 @@ public class messagetest {
  
     @Test
     public void testValidateMessageLength_ShortMessageReturnsReady() {
-        assertEquals("Message ready to send.", message.validateMessageLength("Hello"));
+        assertEquals("Message ready to send.", message.validateMessageLength("HI"));
     }
  
     @Test
@@ -133,10 +133,10 @@ public class messagetest {
  
     @Test
     public void testCreateMessageHash_ContainsFirstAndLastWord() {
-        message.message = "Hello Beautiful World";
+        message.message = "HI Beautiful ZOLA";
         String hash = message.createMessageHash(1);
-        assertTrue(hash.contains("HELLO"));
-        assertTrue(hash.contains("WORLD"));
+        assertTrue(hash.contains("HI"));
+        assertTrue(hash.contains("ZOLA"));
     }
  
     @Test
@@ -184,7 +184,7 @@ public class messagetest {
  
     @Test
     public void testAddMessage_Type1IncrementsSentCount() {
-        message.addMessage("ID001", "HASH001", "+27831234567", "Hello", 1);
+        message.addMessage("ID001", "HASH001", "+27831234567", "HI", 1);
         assertEquals(1, message.sentCount);
     }
  
@@ -202,7 +202,7 @@ public class messagetest {
  
     @Test
     public void testAddMessage_Type1DoesNotAffectDiscardedOrStored() {
-        message.addMessage("ID001", "HASH001", "+27831234567", "Hello", 1);
+        message.addMessage("ID001", "HASH001", "+27831234567", "HI", 1);
         assertEquals(0, message.discardedCount);
         assertEquals(0, message.storedCount);
     }
@@ -237,7 +237,7 @@ public class messagetest {
  
     @Test
     public void testSearchByID_ReturnsNotFoundForMissingID() {
-        message.addMessage("ID001", "H1", "+27831234567", "Hello", 1);
+        message.addMessage("ID001", "H1", "+27831234567", "HI", 1);
         assertEquals("Message not found", message.searchByID("ID999"));
     }
  
@@ -253,8 +253,8 @@ public class messagetest {
  
     @Test
     public void testSearchByRecipient_ReturnsAllMatchingMessages() {
-        message.addMessage("ID001", "H1", "+27831234567", "Hello", 1);
-        message.addMessage("ID002", "H2", "+27831234567", "World", 1);
+        message.addMessage("ID001", "H1", "+27831234567", "HI", 1);
+        message.addMessage("ID002", "H2", "+27831234567", "ZOLA", 1);
         String result = message.searchByRecipient("+27831234567");
         assertTrue(result.contains("Hello"));
         assertTrue(result.contains("World"));
@@ -262,15 +262,15 @@ public class messagetest {
  
     @Test
     public void testSearchByRecipient_EmptyStringForUnknownRecipient() {
-        message.addMessage("ID001", "H1", "+27831234567", "Hello", 1);
+        message.addMessage("ID001", "H1", "+27831234567", "HI", 1);
         assertEquals("", message.searchByRecipient("+27830000000"));
     }
  
     @Test
     public void testSearchByRecipient_DoesNotReturnOtherRecipientsMessages() {
-        message.addMessage("ID001", "H1", "+27831234567", "For Alice", 1);
+        message.addMessage("ID001", "H1", "+27831234567", "For Klice", 1);
         message.addMessage("ID002", "H2", "+27839876543", "For Bob", 1);
-        assertFalse(message.searchByRecipient("+27831234567").contains("For Bob"));
+        assertFalse(message.searchByRecipient("+27831234567").contains("For Lob"));
     }
  
     //  deleteByHash 
@@ -290,7 +290,7 @@ public class messagetest {
  
     @Test
     public void testDeleteByHash_ReturnsFalseForNonExistentHash() {
-        message.addMessage("ID001", "HASH001", "+27831234567", "Hello", 1);
+        message.addMessage("ID001", "HASH001", "+27831234567", "HI", 1);
         assertFalse(message.deleteByHash("HASH999"));
     }
  
